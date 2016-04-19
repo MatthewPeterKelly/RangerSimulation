@@ -41,5 +41,3 @@ The ground model user here is a linear + sine function, with a total of five par
 All of the simulation code is designed to work well with Matlab coder. Once you have mex properly configured, you should be able to run the command: `coder -build simulate.prj` to compile a mex version of the simulation function for your computer architecture.
 
 To create a C-source or executable version, run: `coder simulate.prj` and edit the build target accordingly.
-
-If you are interested in the C-code version of this simulator, and do not have Matlab coder, just send me an email and I'll send you a recently compiled version.

@@ -60,4 +60,8 @@ model.motor.hip.kSpring = 8.045;
 model.motor.overheadPower = 4.5;  %(Watts) estimated power consumed by computers and sensors
 model.motor.Phi = model.dyn.Phi;  %Ankle joint orientation constant
 
+model.sensors.Phi = model.dyn.Phi;
+
+model.estimator = [];
+
 end

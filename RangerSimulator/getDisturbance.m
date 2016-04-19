@@ -1,39 +1,35 @@
-function [dist, t] = getDisturbance(nStep,xAmp,yAmp,wn,model,flagNormal)
-% [dist, t] = getDisturbance(nStep,xAmp,yAmp,wn,model,flagNormal)
-%
-% This function computes a disturbance that should be applied at the hips
-%
-% nStep = number of steps to generate data for
-% xAmp = xAmp(t) = function handle for amplitude
-% yAmp = yAmp(t) = function handle for amplidute
-% wn = cut-off frequency for noise
-% model = model struct for robot
-% if flagNormal then use normal disturbution
-% else then use uniform distribution
+function [t, fx, fy] = getDisturbance(dist)
+% [t, fx, fy] = getDisturbance(dist)
+% 
+% dist.tSpan = [0,6];
+% dist.dt = 0.001;
+% dist.bnd.startTime = [0.1, 1.3];
+% dist.bnd.duration = [0.2,0.8];
+% dist.bnd.xImpulse = [10,50];
+% dist.bnd.yImpulse = [1,5];
 %
 
-warning('THIS CODE IS DEPRECATED. USE THE VERSION IN CONTROLLER DESIGN.');
+B = dist.bnd;
+tStart = dist.tSpan(1);
+tFinal = dist.tSpan(2);
+dt = dist.dt;
 
-nSamples = nStep*model.dyn.nDataPerStep;
-dt = model.dyn.dt;
-duration = (nSamples-1)*dt;
+t0 = B.startTime(1) + (B.startTime(2)-B.startTime(1))*rand(1);
+T = B.duration(1) + (B.duration(2)-B.duration(1))*rand(1);
+Jx = B.xImpulse(1) + (B.xImpulse(2)-B.xImpulse(1))*rand(1);
+Jy = B.yImpulse(1) + (B.yImpulse(2)-B.yImpulse(1))*rand(1);
 
-t = linspace(0,duration,nSamples);
+Fx = Jx/T;
+Fy = Jy/T;
+t1 = t0 + T;
 
-if flagNormal
-    xRandn = -1 + 2*rand(1,nSamples);
-    yRandn = -1 + 2*rand(1,nSamples);
-else
-    xRandn = randn(1,nSamples);
-    yRandn = randn(1,nSamples);
-end
-[B,A] = butter(2,2*dt*wn);
-xRandn = filtfilt(B,A,xRandn);
-yRandn = filtfilt(B,A,yRandn);
+t = tStart:dt:tFinal;
+active = t0 < t & t < t1;
 
-xRandn = xAmp(t).*xRandn;
-yRandn = yAmp(t).*yRandn;
+fx = zeros(size(t));
+fx(active) = Fx;
 
-dist = [xRandn; yRandn];
+fy = zeros(size(t));
+fy(active) = Fy;
 
 end

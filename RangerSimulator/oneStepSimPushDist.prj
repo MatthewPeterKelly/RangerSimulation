@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2015b">
-  <configuration build-checksum="926485179" file="/home/matt/Git/RangerPublic/RangerSimulator/simulate.prj" location="/home/matt/Git/RangerPublic/RangerSimulator" name="simulate" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration build-checksum="433123965" file="/home/matt/Git/RangerPaper/ControlDesign/oneStepSimPushDist.prj" location="/home/matt/Git/RangerPaper/ControlDesign" name="oneStepSimPushDist" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
       <param.BuiltInstrumentedMex>false</param.BuiltInstrumentedMex>
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
@@ -27,7 +27,7 @@
       <param.DefaultTestFile />
       <param.MergeInstrumentationResults>false</param.MergeInstrumentationResults>
       <param.VerificationMode>option.VerificationMode.None</param.VerificationMode>
-      <param.VerificationStatus>option.VerificationStatus.Passed</param.VerificationStatus>
+      <param.VerificationStatus>option.VerificationStatus.Inactive</param.VerificationStatus>
       <param.CustomSourceCode />
       <param.CustomHeaderCode />
       <param.CustomInitializer />
@@ -62,6 +62,7 @@
         <param.ExtrinsicCalls />
         <param.IntegrityChecks />
         <param.SaturateOnIntegerOverflow />
+        <param.GlobalDataSyncMethod />
         <param.EnableVariableSizing />
         <param.DynamicMemoryAllocation />
         <param.DynamicMemoryAllocationThreshold />
@@ -75,6 +76,7 @@
         <param.LaunchReport />
         <param.DefaultTestFile />
         <param.MergeInstrumentationResults />
+        <param.VerificationStatus />
         <param.CustomSourceCode />
         <param.CustomHeaderCode />
         <param.CustomInitializer />
@@ -99,7 +101,7 @@
       </unset>
     </profile>
     <profile key="profile.c">
-      <param.grt.GenCodeOnly>true</param.grt.GenCodeOnly>
+      <param.grt.GenCodeOnly>false</param.grt.GenCodeOnly>
       <param.WorkingFolder>option.WorkingFolder.Project</param.WorkingFolder>
       <param.SpecifiedWorkingFolder />
       <param.BuildFolder>option.BuildFolder.Project</param.BuildFolder>
@@ -116,7 +118,7 @@
       <param.FilePartitionMethod>option.FilePartitionMethod.MapMFileToCFile</param.FilePartitionMethod>
       <param.GenerateComments>true</param.GenerateComments>
       <param.CommentStyle>option.CommentStyle.Auto</param.CommentStyle>
-      <param.MATLABSourceComments>true</param.MATLABSourceComments>
+      <param.MATLABSourceComments>false</param.MATLABSourceComments>
       <param.MATLABFcnDesc>true</param.MATLABFcnDesc>
       <param.DataTypeReplacement>option.DataTypeReplacement.CBuiltIn</param.DataTypeReplacement>
       <param.ConvertIfToSwitch>false</param.ConvertIfToSwitch>
@@ -158,12 +160,12 @@
       <param.PostCodeGenCommand />
       <param.TargetLangStandard>C89/C90 (ANSI)</param.TargetLangStandard>
       <param.CodeReplacementLibrary>None</param.CodeReplacementLibrary>
-      <param.DeprecatedCRLFlag>false</param.DeprecatedCRLFlag>
+      <param.DeprecatedCRLFlag />
       <param.SameHardware>true</param.SameHardware>
-      <param.Toolchain>GNU gcc/g++ v4.4.x | gmake (64-bit Linux)</param.Toolchain>
+      <param.Toolchain>Automatically locate an installed toolchain</param.Toolchain>
       <param.BuildConfiguration>Faster Builds</param.BuildConfiguration>
       <param.CustomToolchainOptions />
-      <var.ToolchainSettingsVisible>true</var.ToolchainSettingsVisible>
+      <var.ToolchainSettingsVisible />
       <param.target.Data />
       <param.target.ActiveType>option.target.TargetType.MatlabHost</param.target.ActiveType>
       <param.target.ActiveTarget />
@@ -214,12 +216,12 @@
       <param.GenerateExampleMain>option.GenerateExampleMain.GenerateCodeOnly</param.GenerateExampleMain>
       <param.PreserveVariableNames>option.PreserveVariableNames.UserNames</param.PreserveVariableNames>
       <param.TargetLang>option.TargetLang.C</param.TargetLang>
-      <param.CCompilerOptimization>option.CCompilerOptimization.Off</param.CCompilerOptimization>
+      <param.CCompilerOptimization />
       <param.CCompilerCustomOptimizations />
       <param.GenerateMakefile>true</param.GenerateMakefile>
       <param.BuildToolEnable>false</param.BuildToolEnable>
-      <param.MakeCommand>make_rtw</param.MakeCommand>
-      <param.TemplateMakefile>default_tmf</param.TemplateMakefile>
+      <param.MakeCommand />
+      <param.TemplateMakefile />
       <param.BuildToolConfiguration />
       <param.InlineThreshold>10</param.InlineThreshold>
       <param.InlineThresholdMax>200</param.InlineThresholdMax>
@@ -240,12 +242,14 @@
         <param.PurelyIntegerCode />
         <param.SupportNonFinite />
         <param.EnableVariableSizing />
+        <param.DynamicMemoryAllocation />
         <param.DynamicMemoryAllocationThreshold />
         <param.StackUsageMax />
         <param.MultiInstanceCode />
         <param.FilePartitionMethod />
         <param.GenerateComments />
         <param.CommentStyle />
+        <param.MATLABSourceComments />
         <param.MATLABFcnDesc />
         <param.DataTypeReplacement />
         <param.ConvertIfToSwitch />
@@ -275,6 +279,7 @@
         <param.DefaultTestFile />
         <param.MergeInstrumentationResults />
         <param.RanPilSilVerification />
+        <param.VerificationMode />
         <param.VerificationStatus />
         <param.CustomSourceCode />
         <param.CustomHeaderCode />
@@ -288,6 +293,7 @@
         <param.CodeReplacementLibrary />
         <param.DeprecatedCRLFlag />
         <param.SameHardware />
+        <param.Toolchain />
         <param.BuildConfiguration />
         <param.CustomToolchainOptions />
         <var.ToolchainSettingsVisible />
@@ -670,13 +676,13 @@
       </unset>
     </profile>
     <param.objective>option.objective.c</param.objective>
-    <param.WorkflowStep>generateCode</param.WorkflowStep>
+    <param.WorkflowStep>workflowSummary</param.WorkflowStep>
     <param.TestSnippets>
-      <item>TEST_SimpleWalk</item>
+      <item>TEST_simulationWithDisturbance</item>
     </param.TestSnippets>
     <param.DefaultImportExportVariable>config</param.DefaultImportExportVariable>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
-    <param.outputfile>${PROJECT_ROOT}/codegen/lib/simulate/simulate.a</param.outputfile>
+    <param.outputfile>${PROJECT_ROOT}/oneStepSimPushDist_mex.mexa64</param.outputfile>
     <param.version>R2012a</param.version>
     <param.HasECoderFeatures>false</param.HasECoderFeatures>
     <param.mex.mainhtml />
@@ -689,28 +695,27 @@
     <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
     <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
-    <param.AnnotationChecksum>3108926865</param.AnnotationChecksum>
+    <param.AnnotationChecksum>1899802399</param.AnnotationChecksum>
     <var.LegacyTarget />
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
     <var.redirectedInputTypeData />
     <var.DismissScreener>true</var.DismissScreener>
     <param.unifiedParamStorage />
-    <var.gc.lastOutputRoot>codegen/lib/simulate</var.gc.lastOutputRoot>
-    <var.gc.preBuildChecksum>4168444575</var.gc.preBuildChecksum>
-    <var.cfi.lastOutputRoot>codegen/mex/simulate</var.cfi.lastOutputRoot>
-    <var.cfi.preBuildChecksum>3133933069</var.cfi.preBuildChecksum>
-    <var.lastCfiTestSnippet>TEST_SimpleWalk</var.lastCfiTestSnippet>
+    <var.gc.lastOutputRoot>codegen/mex/oneStepSimPushDist</var.gc.lastOutputRoot>
+    <var.gc.preBuildChecksum>2335698856</var.gc.preBuildChecksum>
+    <var.cfi.lastOutputRoot />
+    <var.cfi.preBuildChecksum />
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/findContactPoint.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/footModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/getAngRel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/getContactInfo.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/groundClearance.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/groundModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/motorModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/simulate.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/wrapTo2Pi.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;315916490&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
-    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/autoGen_pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/findContactPoint.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/footModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/getAngRel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/getContactInfo.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/groundClearance.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/groundModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/motorModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/simulate.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPublic/RangerSimulator/wrapTo2Pi.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;/home/matt/Git/RangerPaper/ControlDesign/getPushDisturbance.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/ControlDesign/oneStepSimPushDist.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/checkFall.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/estimator.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/findContactPoint.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/fixInitialState.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/footModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getAngAbs.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getAngRel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getContactInfo.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getRelativeAngleJointPos.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/groundClearance.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/groundModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/motorControl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/motorModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/sensors.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/simulate.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/walkControl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/wrapTo2Pi.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;3407976983&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;/home/matt/Git/RangerPaper/ControlDesign/getPushDisturbance.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/ControlDesign/oneStepSimPushDist.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/autoGen_pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/checkFall.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_ds.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_fl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_s0.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/dynamics_s1.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/estimator.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/findContactPoint.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/fixInitialState.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/footModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getAngAbs.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getAngRel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getContactInfo.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/getRelativeAngleJointPos.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/groundClearance.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/groundModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/kinematics.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/kinematicsContact.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/motorControl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/motorModel.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/pwPoly5.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/sensors.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/simulate.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/walkControl.m&lt;/file&gt;&lt;file&gt;/home/matt/Git/RangerPaper/RangerSim/wrapTo2Pi.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
     <param.configImportActive>false</param.configImportActive>
     <var.boundToGui>true</var.boundToGui>
-    <param.mex.outputfile>simulate_mex</param.mex.outputfile>
-    <param.grt.outputfile>simulate</param.grt.outputfile>
-    <param.artifact>option.target.artifact.lib</param.artifact>
-    <param.outputfile>${PROJECT_ROOT}/codegen/lib/simulate/simulate.a</param.outputfile>
+    <param.mex.outputfile>oneStepSimPushDist_mex</param.mex.outputfile>
+    <param.grt.outputfile>oneStepSimPushDist</param.grt.outputfile>
+    <param.artifact>option.target.artifact.mex</param.artifact>
+    <param.outputfile>${PROJECT_ROOT}/oneStepSimPushDist_mex.mexa64</param.outputfile>
     <param.EnableAutoExtrinsicCalls>true</param.EnableAutoExtrinsicCalls>
     <param.UsePreconditions>false</param.UsePreconditions>
     <param.FeatureFlags />
@@ -773,6 +778,8 @@
       <param.FixedPointEnabled />
       <var.redirectedInputTypeData />
       <param.unifiedParamStorage />
+      <var.cfi.lastOutputRoot />
+      <var.cfi.preBuildChecksum />
       <var.outdatedOnRestore />
       <param.configImportActive />
       <param.mex.outputfile />
@@ -819,9 +826,17 @@
       <var.snapshotChecksum />
     </unset>
     <fileset.entrypoints>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}/simulate.m">
-        <Inputs fileName="simulate.m" functionName="simulate">
-          <Input Name="state">
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}/oneStepSimPushDist.m">
+        <Inputs fileName="oneStepSimPushDist.m" functionName="oneStepSimPushDist">
+          <Input Name="t0">
+            <Class>double</Class>
+            <Size>1 x 1</Size>
+            <Value />
+            <InitialValue />
+            <UserDefined>false</UserDefined>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="x0">
             <Class>double</Class>
             <Size>12 x 1</Size>
             <Value />
@@ -829,31 +844,15 @@
             <UserDefined>false</UserDefined>
             <Complex>false</Complex>
           </Input>
-          <Input Name="ir">
+          <Input Name="action">
             <Class>double</Class>
-            <Size>3 x 1</Size>
+            <Size>5 x 1</Size>
             <Value />
             <InitialValue />
             <UserDefined>false</UserDefined>
             <Complex>false</Complex>
           </Input>
-          <Input Name="cp">
-            <Class>double</Class>
-            <Size>3 x 1</Size>
-            <Value />
-            <InitialValue />
-            <UserDefined>false</UserDefined>
-            <Complex>false</Complex>
-          </Input>
-          <Input Name="cd">
-            <Class>double</Class>
-            <Size>3 x 1</Size>
-            <Value />
-            <InitialValue />
-            <UserDefined>false</UserDefined>
-            <Complex>false</Complex>
-          </Input>
-          <Input Name="dyn">
+          <Input Name="model">
             <Class>struct</Class>
             <Size>1 x 1</Size>
             <Value />
@@ -863,154 +862,7 @@
             <Extern>false</Extern>
             <HeaderFile />
             <Alignment>0</Alignment>
-            <Field Name="g">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="l">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="d">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="r">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="c">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="m">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="I">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="Ifoot">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="b">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="Phi">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="ground">
-              <Class>double</Class>
-              <Size>1 x 6</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="dt">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="cstWn">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="cstXi">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="maxStepDuration">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="minStepDuration">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-            <Field Name="nDataPerStep">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-          </Input>
-          <Input Name="motor">
-            <Class>struct</Class>
-            <Size>1 x 1</Size>
-            <Value />
-            <InitialValue />
-            <UserDefined>false</UserDefined>
-            <TypeName />
-            <Extern>false</Extern>
-            <HeaderFile />
-            <Alignment>0</Alignment>
-            <Field Name="ank">
+            <Field Name="control">
               <Class>struct</Class>
               <Size>1 x 1</Size>
               <Value />
@@ -1020,96 +872,391 @@
               <Extern>false</Extern>
               <HeaderFile />
               <Alignment>0</Alignment>
-              <Field Name="R">
-                <Class>double</Class>
+              <Field Name="ank">
+                <Class>struct</Class>
                 <Size>1 x 1</Size>
                 <Value />
                 <InitialValue />
                 <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
+                <TypeName />
+                <Extern>false</Extern>
+                <HeaderFile />
+                <Alignment>0</Alignment>
+                <Field Name="qSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="kSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="kMotor">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="uMax">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
               </Field>
-              <Field Name="Vc">
-                <Class>double</Class>
+              <Field Name="hip">
+                <Class>struct</Class>
                 <Size>1 x 1</Size>
                 <Value />
                 <InitialValue />
                 <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
+                <TypeName />
+                <Extern>false</Extern>
+                <HeaderFile />
+                <Alignment>0</Alignment>
+                <Field Name="qSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="kSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="kMotor">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="uMax">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
               </Field>
-              <Field Name="K">
-                <Class>double</Class>
+              <Field Name="data">
+                <Class>struct</Class>
                 <Size>1 x 1</Size>
                 <Value />
                 <InitialValue />
                 <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="G">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="c1">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="c0">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="mu">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="Imax">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="alpha">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="xSpring">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
-              </Field>
-              <Field Name="kSpring">
-                <Class>double</Class>
-                <Size>1 x 1</Size>
-                <Value />
-                <InitialValue />
-                <UserDefined>false</UserDefined>
-                <Complex>false</Complex>
+                <TypeName />
+                <Extern>false</Extern>
+                <HeaderFile />
+                <Alignment>0</Alignment>
+                <Field Name="walk">
+                  <Class>struct</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <TypeName />
+                  <Extern>false</Extern>
+                  <HeaderFile />
+                  <Alignment>0</Alignment>
+                  <Field Name="hip_kp">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="hip_kd">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_push_kp">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_push_kd">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_stance_kp">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_stance_kd">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_swing_kp">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_swing_kd">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_push">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="crit_step_length">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="scissor_gain">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="scissor_offset">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="doubleStance_duration">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_flipTarget">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_holdLevel">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ank_pushTarget">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                </Field>
+                <Field Name="dyn">
+                  <Class>struct</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <TypeName />
+                  <Extern>false</Extern>
+                  <HeaderFile />
+                  <Alignment>0</Alignment>
+                  <Field Name="g">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="l">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="d">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="r">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="c">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="m">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="I">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="Ifoot">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="b">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="Phi">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="ground">
+                    <Class>double</Class>
+                    <Size>1 x 6</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="dt">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="cstWn">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="cstXi">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="maxStepDuration">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="minStepDuration">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                  <Field Name="nDataPerStep">
+                    <Class>double</Class>
+                    <Size>1 x 1</Size>
+                    <Value />
+                    <InitialValue />
+                    <UserDefined>false</UserDefined>
+                    <Complex>false</Complex>
+                  </Field>
+                </Field>
               </Field>
             </Field>
-            <Field Name="hip">
+            <Field Name="dyn">
               <Class>struct</Class>
               <Size>1 x 1</Size>
               <Value />
@@ -1119,7 +1266,7 @@
               <Extern>false</Extern>
               <HeaderFile />
               <Alignment>0</Alignment>
-              <Field Name="R">
+              <Field Name="g">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1127,7 +1274,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="Vc">
+              <Field Name="l">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1135,7 +1282,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="K">
+              <Field Name="d">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1143,7 +1290,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="G">
+              <Field Name="r">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1151,7 +1298,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="c1">
+              <Field Name="c">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1159,7 +1306,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="c0">
+              <Field Name="m">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1167,7 +1314,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="mu">
+              <Field Name="I">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1175,7 +1322,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="Imax">
+              <Field Name="Ifoot">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1183,7 +1330,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="alpha">
+              <Field Name="b">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1191,7 +1338,7 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="xSpring">
+              <Field Name="Phi">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1199,7 +1346,55 @@
                 <UserDefined>false</UserDefined>
                 <Complex>false</Complex>
               </Field>
-              <Field Name="kSpring">
+              <Field Name="ground">
+                <Class>double</Class>
+                <Size>1 x 6</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="dt">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="cstWn">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="cstXi">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="maxStepDuration">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="minStepDuration">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="nDataPerStep">
                 <Class>double</Class>
                 <Size>1 x 1</Size>
                 <Value />
@@ -1208,39 +1403,310 @@
                 <Complex>false</Complex>
               </Field>
             </Field>
-            <Field Name="overheadPower">
-              <Class>double</Class>
+            <Field Name="dist">
+              <Class>struct</Class>
               <Size>1 x 1</Size>
+              <Value />
+              <InitialValue />
+              <UserDefined>false</UserDefined>
+              <TypeName />
+              <Extern>false</Extern>
+              <HeaderFile />
+              <Alignment>0</Alignment>
+              <Field Name="t0">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="t1">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="fx">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="fy">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+            </Field>
+            <Field Name="motor">
+              <Class>struct</Class>
+              <Size>1 x 1</Size>
+              <Value />
+              <InitialValue />
+              <UserDefined>false</UserDefined>
+              <TypeName />
+              <Extern>false</Extern>
+              <HeaderFile />
+              <Alignment>0</Alignment>
+              <Field Name="ank">
+                <Class>struct</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <TypeName />
+                <Extern>false</Extern>
+                <HeaderFile />
+                <Alignment>0</Alignment>
+                <Field Name="R">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="Vc">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="K">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="G">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="c1">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="c0">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="mu">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="Imax">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="alpha">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="xSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="kSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+              </Field>
+              <Field Name="hip">
+                <Class>struct</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <TypeName />
+                <Extern>false</Extern>
+                <HeaderFile />
+                <Alignment>0</Alignment>
+                <Field Name="R">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="Vc">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="K">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="G">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="c1">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="c0">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="mu">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="Imax">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="alpha">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="xSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+                <Field Name="kSpring">
+                  <Class>double</Class>
+                  <Size>1 x 1</Size>
+                  <Value />
+                  <InitialValue />
+                  <UserDefined>false</UserDefined>
+                  <Complex>false</Complex>
+                </Field>
+              </Field>
+              <Field Name="overheadPower">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+              <Field Name="Phi">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+            </Field>
+            <Field Name="sensors">
+              <Class>struct</Class>
+              <Size>1 x 1</Size>
+              <Value />
+              <InitialValue />
+              <UserDefined>false</UserDefined>
+              <TypeName />
+              <Extern>false</Extern>
+              <HeaderFile />
+              <Alignment>0</Alignment>
+              <Field Name="Phi">
+                <Class>double</Class>
+                <Size>1 x 1</Size>
+                <Value />
+                <InitialValue />
+                <UserDefined>false</UserDefined>
+                <Complex>false</Complex>
+              </Field>
+            </Field>
+            <Field Name="estimator">
+              <Class>double</Class>
+              <Size>0 x 0</Size>
               <Value />
               <InitialValue />
               <UserDefined>false</UserDefined>
               <Complex>false</Complex>
             </Field>
-            <Field Name="Phi">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>false</UserDefined>
-              <Complex>false</Complex>
-            </Field>
-          </Input>
-          <Input Name="dist">
-            <Class>double</Class>
-            <Size>2 x 1</Size>
-            <Value />
-            <InitialValue />
-            <UserDefined>false</UserDefined>
-            <Complex>false</Complex>
           </Input>
         </Inputs>
       </file>
     </fileset.entrypoints>
     <fileset.testbench>
-      <file>${PROJECT_ROOT}/TEST_SimpleWalk.m</file>
+      <file>${PROJECT_ROOT}/TEST_simulationWithDisturbance.m</file>
     </fileset.testbench>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}/codegen/lib/simulate" name="simulate.a" optional="false">/home/matt/Git/RangerPublic/RangerSimulator/codegen/lib/simulate/simulate.a</file>
+      <file location="/home/matt/Git/RangerPaper/ControlDesign" name="oneStepSimPushDist_mex.mexa64" optional="false">/home/matt/Git/RangerPaper/ControlDesign/oneStepSimPushDist_mex.mexa64</file>
     </build-deliverables>
     <workflow />
     <matlab>
@@ -1269,7 +1735,7 @@
       <vista>false</vista>
       <linux>true</linux>
       <solaris>false</solaris>
-      <osver>3.19.0-58-generic</osver>
+      <osver>3.19.0-51-generic</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>glnxa64</arch>
