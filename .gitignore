@@ -17,6 +17,7 @@
 # Large data files:
 **/*.mat
 **/*.mp4
+**/*.gif
 
 # Automatically generated pdf
 **/*.pdf
