@@ -1,0 +1,98 @@
+% Derive Minimal coordinates for a disk rolling down an incline plane with
+% a pendulum connected via an off-center pin-joint
+%
+%
+
+clc; clear;
+
+syms q0 dq0 ddq0 'real' %Minimal States of the disk
+syms q1 dq1 ddq1 'real' %Minimal States of the pendulum
+syms u 'real' %Torque from the pendulum acting on the disk
+syms Fx Fy 'real' % Contact forces
+syms slope m0 m1 g r a b I0 I1 'real' % Parameters
+% r = radius of the disk
+% a = distance from disk center to pin joint
+% b = distance from pin joint to CoM of pendulum
+%
+
+i = sym([1;0]);
+j = sym([0;1]);
+
+%%%% Kinematics:
+
+e0 = cos(q0)*(-j) + sin(q0)*(i);  %Unit vector from disk center to pin joint
+e1 = cos(q1)*(-j) + sin(q1)*(i);  %Unit vector from pin joint to tip of pendulum
+
+t = cos(slope)*i + sin(slope)*j;   % Unit vector along slope
+n = -sin(slope)*i + cos(slope)*j;  % Uni vector normal to slope
+
+z = [q0;q1;dq0;dq1];
+dz = [dq0;dq1;ddq0;ddq1];
+
+p0 = -r*q0*t + r*n;   % Position of the center of the disk
+dp0 = jacobian(p0,z)*dz;  %Velocity
+ddp0 = jacobian(dp0,z)*dz;  %acceleration
+
+pStar = p0 + a*e0;  %Position of the pin joint 
+dpStar = jacobian(pStar,z)*dz;  %Velocity
+ddpStar = jacobian(dpStar,z)*dz;  %acceleration
+
+p1 = pStar + b*e1;  %Position of the pendulum CoM 
+dp1 = jacobian(p1,z)*dz;  %Velocity
+ddp1 = jacobian(dp1,z)*dz;  %acceleration
+
+%%%% Dynamics:
+
+% Define a function for doing '2d' cross product: dot(cross(a,b), k)
+cross2d = @(a,b)(a(1)*b(2) - a(2)*b(1));
+
+% Sum of forces and torques on entire system:
+F = Fx*i + Fy*j;  %Contact forces
+sumForces0 = F + m0*g*(-j) + m1*g*(-j);
+sumAccel0 = m0*ddp0 + m1*ddp1;
+sumTorques0 = cross2d(-r*n,F) + cross2d(p1-p0,m1*g*(-j));  
+sumInertial0 = I0*ddq0 + I1*ddq1 + cross2d(p1-p0,m1*ddp1);
+
+% Sum of torques on pendulum about pin joint
+sumTorques1 = cross2d(p1-pStar,m1*g*(-j)) - u;
+sumInertial1 = I1*ddq1 + cross2d(p1-pStar,m1*ddp1);
+
+% Collect equations:
+eqns = [...
+    sumForces0 - sumAccel0;
+    sumTorques0 - sumInertial0;
+    sumTorques1 - sumInertial1];
+vars = [ddq0;ddq1;Fx;Fy];
+
+[AA,bb] = equationsToMatrix(eqns,vars);
+soln = simplify(AA\bb);
+
+%%%% Energy:
+KE = 0.5*I0*dq0*dq0 + 0.5*I1*dq1*dq1 + 0.5*m0*dot(dp0,dp0) + 0.5*m1*dot(dp1,dp1);
+PE = m0*g*p0(2) + m1*g*p1(2);
+
+%%%% Write out solution:
+matlabFunction(soln(1), soln(2),...
+    'file','autoGen_dynamics_minimal.m',...
+    'vars',{q0,q1,dq1,dq0,u,m0, m1, g, r, a, b, I0, I1, slope},...
+    'output',{'ddq0','ddq1'});
+matlabFunction(soln(3), soln(4),...
+    'file','autoGen_forces_minimal.m',...
+    'vars',{q0,q1,dq1,dq0,u,m0, m1, g, r, a, b, I0, I1, slope},...
+    'output',{'Fx','Fy'});
+
+
+%%%% Write out kinematics:
+matlabFunction(p0,pStar,p1,dp0,dpStar,dp1,...
+    'file','autoGen_kinematics_minimal.m',...
+    'vars',{q0,q1,dq1,dq0, r, a, b, slope},...
+    'output',{'p0','pStar','p1','dp0','dpStar','dp1'});
+
+
+%%%% Write out energy:
+matlabFunction(KE, PE,...
+    'file','autoGen_energy_minimal.m',...
+    'vars',{q0,q1,dq1,dq0,m0, m1, g, r, a, b, I0, I1, slope},...
+    'output',{'KE','PE'});
+
+

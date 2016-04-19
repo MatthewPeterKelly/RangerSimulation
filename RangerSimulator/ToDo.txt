@@ -1,0 +1,11 @@
+Need to create a few good controllers to put into the machine learning code. Ideas:
+
+1) Starting from balanced mid-stance
+
+First create a good controller for dealing with initial transients. Do this by using a similar optimization method as previously was used. The controller must achieve a periodic gait by starting from an initial balanced state at mid-stance, and do so on both positive, negative, and neutral slopes. The gains in the controller should be fixed, and only the few controller set-points should be left as free decision variables. 
+The optimization should determine two sets of gains: one for the first step, and the other for all subsequenty steps. This makes it a bit better at handling transients.
+
+2) Regulating steady-state gait. 
+
+Start with the periodic controller found in (1) and then use that to seed a second optimization, where the walker starts at the same initial state, but with perturbations to the stance leg rate. The optimization just tries to get the state back towards the desired periodic gait. Do this for many different stance leg rates. For each optimization, include other errors in the swing leg angle and rate, as well as the model parameters.
+

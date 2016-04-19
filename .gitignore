@@ -1,0 +1,22 @@
+# Matlab coder automatically generated files
+**/codegen/*
+**/*_mex.mex*
+
+# Autosave files
+**/*.*~
+**/*.asv
+**/.lock.*
+
+# CMAES data log files:
+**/outcmaes*.dat
+**/variablescmaes.mat
+
+# Data logs:
+**/*SNOPTinfo.txt
+
+# Large data files:
+**/*.mat
+**/*.mp4
+
+# Automatically generated pdf
+**/*.pdf

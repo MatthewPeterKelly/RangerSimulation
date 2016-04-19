@@ -1,0 +1,136 @@
+Ranger Naming Conventions:
+x = [z;dz];
+z = [6, 1] = full configuration vector
+dz = [6, 1] = full configuration rate vector
+ddz = [6, 1] = full configuration acceleration vector
+	(1) = hip horizontal position
+	(2) = hip vertical position
+	(3) = outer foot absolute angle
+	(4) = inner foot absolute angle
+	(5) = outer leg absolute angle
+	(6) = inner leg absolute angle
+
+u = [3, 1] = motor torque vector
+	(1) = outer ankle joint torque (+leg, -foot)
+	(2) = inner ankle joint torque (+leg, -foot)
+	(3) = hip torque (+inner, -outer)
+
+dyn = parameter struct:
+	.l = leg length
+	.g = acceleration due to gravity
+	.l = leg length (hip joint to foot joint)
+	.d = distance between foot joint and virtual center of foot
+	.r = radius of circular arc on foot
+	.c = distance along leg from hip to CoM
+	.w = distance off leg from main axis to CoM
+	.m = mass of each leg
+	.I = moment of inertia of the leg about its center of mass
+	.Ifoot = moment of inertia of the foot about the foot joint
+
+f = [4, 1] = contact force vector
+f = [f0; f1] = [outer; inner] = [f0x; f0y; f1x; f1y] = contact forces
+	(1) = horizontal component
+	(2) = vertical component
+
+Angle Convention:
+	- All angles are in absolute reference frame
+    - zero corresponds to:
+    	(legs) = ankle joint directly below hip joint
+        (feet) = ankle joint directly below virtual foot center
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+x = z(1);
+y = z(2);
+phi0 = z(3);
+phi1 = z(4);
+th0 = z(5);
+th1 = z(6);
+
+dx = dz(1);
+dy = dz(2);
+dphi0 = dz(3);
+dphi1 = dz(4);
+dth0 = dz(5);
+dth1 = dz(6);
+
+ddx = ddz(1);
+ddy = ddz(2);
+ddphi0 = ddz(3);
+ddphi1 = ddz(4);
+ddth0 = ddz(5);
+ddth1 = ddz(6);
+
+ddz(1) = ddx;
+ddz(2) = ddy
+ddz(3) = ddphi0;
+ddz(4) = ddphi1;
+ddz(5) = ddth0;
+ddz(6) = ddth1;
+
+uh = u(1);   % Hip current
+u0 = u(2);   % Outer ankle current
+u1 = u(3);   % Inner ankle current
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+angAbs = [4,n] 
+  (1) = phi0 = outer foot absolute angle
+  (2) = phi1 = inner foot absolute angle
+  (3) = th0 = outer leg absolute angle
+  (4) = th1 = inner leg absolute angle
+
+angRel = [4,n]
+  (1) = qr = -absolute angle of outer leg (from IMU)
+  (2) = qh = hip joint angle 
+  (3) = q0 = outer ankle joint angle
+  (4) = q1 = inner ankle joint angle
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SIMULATOR:
+
+--> y = sensors(x, k, model.sensors);
+
+--> est = estimator(y, model.estimator);
+
+--> ctrl = highControl(t, est, model.control);
+
+--> [uCmd, qRef] = motorControl(est, ctrl);
+
+--> u = motorModel(x, uCmd, model.motor);
+
+--> [x, f, c, k] = simulate(x, u, model.dyn);
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+model = struct with fields for each function
+
+y = [qr;qh;q0;q1; dqr;dqh;dq0;dq1; k0;k1 ];   % sensor data (possibly noisy)
+
+est = [qr;qh;q0;q1; dqr;dqh;dq0;dq1; k0;k1 ];   % estimated data
+
+t = time since simulation started, in seconds.
+
+qRef = [q0; q1; qHip];   % Reference position for each actuated joint
+
+ctrl.u0.kp = proportional gain
+ctrl.u0.kd = derivative gain
+ctrl.u0.xRef = reference angle
+ctrl.u0.vRef = reference rate
+ctrl.u0.uRef = reference torque
+
+ctrl.u1.(same fields as above)
+ctrl.uHip.(same fields as above)
+
+uCmd = [u0;u1;uHip]  % Desired motor torques
+
+u = [u0;u1;uHip]  % Motor torques, after saturation, friction, noise, ...
+
+c = [c0x; c0y; c1x; c1y];  %Coordinates of the contact points 
+
+k = boolean vector [outerFootInContact; innerFootInContact];
+k0 = estimataed contact on outer feet. [0 = floating, 1 = active contact]
+k1 = estimataed contact on inner feet. [0 = floating, 1 = active contact]
+

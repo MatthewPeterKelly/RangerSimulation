@@ -1,0 +1,16 @@
+These things should be done to make the model a better match for Ranger
+
+%%%% TODO %%%%
+%
+% --> Check that swing foot is moving upwards after heel-strike
+% 
+% --> Check that swing foot is moving downwards before heel-strike
+%
+% --> Rolling friction at stance foot (?)
+%
+% --> Viscous friction in hip and ankle joints 
+%
+% --> Ankle motor - asymetric torque limits (0.35Nm counterclockwise before cable goes slack)
+%  
+%%%%%
+
